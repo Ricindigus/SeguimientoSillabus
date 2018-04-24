@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:id="@+id/layout_textArea"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:focusableInTouchMode="true"
+        android:padding="@dimen/margin5dp"
+        android:layout_margin="@dimen/margin10dp"
+        android:background="@drawable/boton_bordeado">
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <EditText
+                android:id="@+id/textArea"
+                android:inputType="textMultiLine"
+                android:lines="8"
+                android:minLines="4"
+                android:gravity="top|left"
+                android:maxLines="10"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:scrollbars="vertical"
+                android:background="@color/colorIcons"
+                />
+        </ScrollView>
+    </LinearLayout>
+</LinearLayout>

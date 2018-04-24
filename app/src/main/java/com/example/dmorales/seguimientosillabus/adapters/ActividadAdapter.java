@@ -6,11 +6,11 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.dmorales.seguimientosillabus.R;
-import com.example.dmorales.seguimientosillabus.pojos.Curso;
+import com.example.dmorales.seguimientosillabus.pojos.Actividad;
+import com.example.dmorales.seguimientosillabus.pojos.Semana;
 
 import java.util.ArrayList;
 
@@ -18,8 +18,8 @@ import java.util.ArrayList;
  * Created by dmorales on 23/04/2018.
  */
 
-public class CursoDisponibleAdapter extends RecyclerView.Adapter<CursoDisponibleAdapter.ViewHolder>{
-    ArrayList<Curso> cursosDisponibles;
+public class ActividadAdapter extends RecyclerView.Adapter<ActividadAdapter.ViewHolder>{
+    ArrayList<Actividad> actividades;
     Context context;
     OnItemClickListener onItemClickListener;
 
@@ -27,24 +27,22 @@ public class CursoDisponibleAdapter extends RecyclerView.Adapter<CursoDisponible
         public void onItemClick(View view, int position);
     }
 
-    public CursoDisponibleAdapter(ArrayList<Curso> cursosDisponibles, Context context, OnItemClickListener onItemClickListener) {
-        this.cursosDisponibles = cursosDisponibles;
+    public ActividadAdapter(ArrayList<Actividad> actividades, Context context, OnItemClickListener onItemClickListener) {
+        this.actividades = actividades;
         this.context = context;
         this.onItemClickListener = onItemClickListener;
     }
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_curso_disponible,parent,false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_actividad,parent,false);
         ViewHolder viewHolder = new ViewHolder(view);
         return viewHolder;
     }
 
     @Override
     public void onBindViewHolder(ViewHolder holder, final int position) {
-        holder.txtEap.setText(cursosDisponibles.get(position).getEscuela());
-        holder.txtCiclo.setText(cursosDisponibles.get(position).getCiclo());
-        holder.txtNombre.setText(cursosDisponibles.get(position).getNombre());
+        holder.txtDescripcion.setText(actividades.get(position).getDescripcion());
         holder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -55,20 +53,16 @@ public class CursoDisponibleAdapter extends RecyclerView.Adapter<CursoDisponible
 
     @Override
     public int getItemCount() {
-        return cursosDisponibles.size();
+        return actividades.size();
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder{
-        TextView txtEap;
-        TextView txtCiclo;
-        TextView txtNombre;
+        TextView txtDescripcion;
         CardView cardView;
         public ViewHolder(View itemView) {
             super(itemView);
-            txtEap = (TextView) itemView.findViewById(R.id.txtEap);
-            txtCiclo = (TextView) itemView.findViewById(R.id.txtCiclo);
-            txtNombre = (TextView) itemView.findViewById(R.id.txtNombre);
-            cardView = (CardView) itemView.findViewById(R.id.cardview_curso_disponible);
+            txtDescripcion = (TextView) itemView.findViewById(R.id.txtItemActividad);
+            cardView = (CardView) itemView.findViewById(R.id.cardview_actividad);
         }
     }
 }

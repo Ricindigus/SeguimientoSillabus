@@ -10,12 +10,17 @@ public class Curso {
     private String nombre;
     private String grupo;
 
+
+
     public Curso(String escuela, String ciclo, String nombre, String grupo) {
         this.escuela = escuela;
         this.ciclo = ciclo;
         this.nombre = nombre;
         this.grupo = grupo;
+
     }
+
+
 
     public Curso() {
     }
@@ -51,4 +56,5 @@ public class Curso {
     public void setGrupo(String grupo) {
         this.grupo = grupo;
     }
+
 }

@@ -5,80 +5,97 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:layout_margin="@dimen/margenMaterial"
+    android:padding="@dimen/margenMaterial"
     tools:context="com.example.dmorales.seguimientosillabus.activities.RegistrarTemasActivity">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:layout_margin="@dimen/margenMaterial">
+        android:orientation="vertical">
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin5dp">
             <TextView
+                android:id="@+id/registrar_temas_txtSemana"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="SEMANA 1"
                 android:textStyle="bold"
+                android:focusableInTouchMode="true"
+                android:focusable="true"
+                android:textSize="20sp"
                 android:textColor="@color/colorPrimaryDark"
-                android:textSize="@dimen/textoMedium"
                 android:gravity="center"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:textSize="@dimen/textoMedium"
                 android:text="REGISTRAR TEMAS"/>
         </LinearLayout>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            />
-        <Spinner
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:drawSelectorOnTop="true"
-            android:entries="@array/unidades_didacticas"/>
+
         <android.support.design.widget.TextInputLayout
+            android:layout_margin="@dimen/margin5dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="TEMA">
             <android.support.design.widget.TextInputEditText
+                android:id="@+id/registrar_temas_txtTema"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:inputType="text"/>
         </android.support.design.widget.TextInputLayout>
+        <Spinner
+            android:id="@+id/registrar_temas_spinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawSelectorOnTop="true"
+            android:layout_margin="@dimen/margin5dp"
+            android:entries="@array/unidades_didacticas"/>
         <LinearLayout
             android:layout_width="match_parent"
-            android:orientation="horizontal"
-            android:layout_height="30dp"
-            android:layout_marginTop="30dp"
-            android:padding="@dimen/margin5dp"
-            android:background="@color/colorPrimaryDark">
-            <TextView
+            android:orientation="vertical"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_margin="5dp">
+            <android.support.v7.widget.CardView
                 android:layout_width="match_parent"
-                android:text="ACTIVIDADES"
-                android:textStyle="bold"
-                android:textColor="@color/colorIcons"
-                android:layout_height="match_parent"
-                android:gravity="center"/>
-        </LinearLayout>
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:padding="@dimen/margin5dp"
-            android:background="@drawable/borde_layout">
-            <android.support.v7.widget.RecyclerView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"/>
-            <android.support.design.widget.FloatingActionButton
-                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/icon_agregar"
-                android:layout_margin="@dimen/margenMaterial"
-                android:layout_alignParentBottom="true"
-                android:layout_alignParentRight="true"
-                app:backgroundTint="@color/colorPrimaryDark"/>
-        </RelativeLayout>
+                app:cardBackgroundColor="@color/colorPrimaryDark">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:text="ACTIVIDADES"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorIcons"
+                    android:layout_height="wrap_content"
+                    android:gravity="center" />
+            </android.support.v7.widget.CardView>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/layout_recycler"
+                android:padding="@dimen/margin5dp">
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/registrar_temas_recycler"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+                <android.support.design.widget.FloatingActionButton
+                    android:id="@+id/registrar_temas_fab"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/icon_agregar"
+                    android:layout_margin="@dimen/margenMaterial"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentRight="true"
+                    app:backgroundTint="@color/colorPrimaryDark"/>
+            </RelativeLayout>
+        </LinearLayout>
+        <Button
+            android:id="@+id/registrar_temas_btnGuardar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="GUARDAR"
+            android:theme="@style/RaisedButtonDark"
+            />
     </LinearLayout>
 </LinearLayout>

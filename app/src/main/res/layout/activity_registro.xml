@@ -39,14 +39,19 @@
         android:padding="@dimen/margin5dp"
         android:gravity="center_vertical"
         android:background="@color/colorPrimary">
-        <ImageView
-            android:id="@+id/img_anterior"
+        <LinearLayout
             android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="30dp"
-            android:padding="@dimen/margin5dp"
-            android:scaleType="fitCenter"
-            android:src="@drawable/flecha_adelante"/>
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+            <ImageView
+                android:id="@+id/img_anterior"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="30dp"
+                android:padding="@dimen/margin5dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/flecha_adelante"/>
+        </LinearLayout>
         <LinearLayout
             android:layout_width="0dp"
             android:layout_weight="10"
@@ -92,15 +97,20 @@
             </LinearLayout>
 
         </LinearLayout>
-        <ImageView
-            android:id="@+id/img_siguiente"
+        <LinearLayout
             android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="30dp"
-            android:rotation="180"
-            android:scaleType="fitCenter"
-            android:padding="@dimen/margin5dp"
-            android:src="@drawable/flecha_adelante"/>
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+            <ImageView
+                android:id="@+id/img_siguiente"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="30dp"
+                android:rotation="180"
+                android:scaleType="fitCenter"
+                android:padding="@dimen/margin5dp"
+                android:src="@drawable/flecha_adelante"/>
+        </LinearLayout>
     </LinearLayout>
     <LinearLayout
         android:id="@+id/layout_fragment"

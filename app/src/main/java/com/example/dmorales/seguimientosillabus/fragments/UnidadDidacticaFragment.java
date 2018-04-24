@@ -55,9 +55,14 @@ public class UnidadDidacticaFragment extends Fragment {
         recyclerView = rootView.findViewById(R.id.recycler_unidad_didactica);
         fab = rootView.findViewById(R.id.fab_unidad_didactica);
 
-        unidadDidacticas = new ArrayList<>();
+        cargarData();
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(contexto);
-        UnidadDidacticaAdapter unidadDidacticaAdapter = new UnidadDidacticaAdapter(unidadDidacticas,contexto,null);
+        UnidadDidacticaAdapter unidadDidacticaAdapter = new UnidadDidacticaAdapter(unidadDidacticas, contexto, new UnidadDidacticaAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(View view, int position) {
+
+            }
+        });
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(linearLayoutManager);
         recyclerView.setAdapter(unidadDidacticaAdapter);
@@ -76,6 +81,7 @@ public class UnidadDidacticaFragment extends Fragment {
                 alertDialog.setOnShowListener(new DialogInterface.OnShowListener() {
                     @Override
                     public void onShow(final DialogInterface dialog) {
+                        txtNombreUnidad.requestFocus();
                         alertDialog.getButton(AlertDialog.BUTTON_POSITIVE).setOnClickListener(new View.OnClickListener() {
                             @Override
                             public void onClick(View v) {
@@ -95,6 +101,16 @@ public class UnidadDidacticaFragment extends Fragment {
             }
         });
         return rootView;
+    }
+
+    public void cargarData(){
+        unidadDidacticas = new ArrayList<>();
+        unidadDidacticas.add(new UnidadDidactica(1,"Introducción y conceptos básicos"));
+        unidadDidacticas.add(new UnidadDidactica(2,"Administración del procesador"));
+        unidadDidacticas.add(new UnidadDidactica(3,"Administración de la memoria real"));
+        unidadDidacticas.add(new UnidadDidactica(4,"Administración de la memoria virtual"));
+        unidadDidacticas.add(new UnidadDidactica(5,"Administración de Entrada/Salida"));
+
     }
 
 }

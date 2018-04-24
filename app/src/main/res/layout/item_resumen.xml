@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/cardview_semana"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="2dp">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/item_resumen_txtUnidad"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="UNIDAD 1"
+            android:textColor="@color/colorIcons"
+            android:textStyle="bold"
+            android:background="@color/colorPrimaryText"/>
+        <TextView
+            android:id="@+id/item_resumen_txtSemana"
+            android:layout_width="match_parent"
+            android:gravity="center"
+            android:text="SEMANA 1"
+            android:textStyle="bold"
+            android:textColor="@color/colorIcons"
+            android:background="@color/colorPrimaryDark"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/item_resumen_txtTema"
+            android:layout_width="match_parent"
+            android:gravity="center"
+            android:text="Tema: Introducción y conceptos básicos"
+            android:textStyle="bold"
+            android:textColor="@color/colorIcons"
+            android:background="@color/colorPrimary"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/margin5dp"
+            android:paddingRight="@dimen/margin5dp"/>
+        <LinearLayout
+            android:id="@+id/resumen_lista_actividades"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            />
+    </LinearLayout>
+</LinearLayout>

@@ -94,17 +94,21 @@ public class RegistroActivity extends AppCompatActivity {
     public void setTitulo(int numPagina){
         switch (numPagina){
             case 1:
+                imgAnterior.setVisibility(View.GONE);
                 txtTitulo.setText("UNIDADES DIDÁCTICAS");
                 txtDot1.setText(Html.fromHtml("&#9679;") + " ");
                 txtDot2.setText(Html.fromHtml("&#9675;") + " ");
                 txtDot3.setText(Html.fromHtml("&#9675;") + " ");
                 break;
             case 2: txtTitulo.setText("SEMANAS");
+                imgAnterior.setVisibility(View.VISIBLE);
+                imgSiguiente.setVisibility(View.VISIBLE);
                 txtDot1.setText(Html.fromHtml("&#9675;") + " ");
                 txtDot2.setText(Html.fromHtml("&#9679;") + " ");
                 txtDot3.setText(Html.fromHtml("&#9675;") + " ");
                 break;
             case 3: txtTitulo.setText("RESUMEN");
+                imgSiguiente.setVisibility(View.GONE);
                 txtDot1.setText(Html.fromHtml("&#9675;") + " ");
                 txtDot2.setText(Html.fromHtml("&#9675;") + " ");
                 txtDot3.setText(Html.fromHtml("&#9679;") + " ");

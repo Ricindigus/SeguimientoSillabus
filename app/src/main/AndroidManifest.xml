@@ -16,11 +16,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activities.LoginActivity" />
-        <activity android:name=".activities.MenuActivity" />
-        <activity android:name=".activities.RegistroActivity" />
-        <activity android:name=".activities.CursosDisponiblesActivity" />
-        <activity android:name=".activities.RegistrarTemasActivity"></activity>
+        <activity android:name=".activities.LoginActivity"
+            />
+        <activity android:name=".activities.MenuActivity"
+            android:configChanges="screenSize|orientation|keyboardHidden" />
+        <activity android:name=".activities.RegistroActivity"
+            android:windowSoftInputMode="adjustNothing|stateAlwaysHidden"
+            android:configChanges="screenSize|orientation|keyboardHidden" />
+        <activity android:name=".activities.CursosDisponiblesActivity"
+            android:configChanges="screenSize|orientation|keyboardHidden" />
+        <activity android:name=".activities.RegistrarTemasActivity"
+            android:windowSoftInputMode="adjustNothing|stateAlwaysHidden"
+            android:configChanges="screenSize|orientation|keyboardHidden" />
     </application>
 
 </manifest>
